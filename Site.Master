@@ -1,0 +1,64 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="WebApplication1.Site" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>TCI Queue System</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+     <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <% Response.CacheControl = "no-cache"%>
+    <% Response.AddHeader("Pragma", "no-cache")%>
+    <% Response.Expires = -1%>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server" style="background-color: #FFFFFF">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+              <asp:ScriptManager ID="ScriptManager1" runat="server" 
+            EnableScriptGlobalization="True">
+        </asp:ScriptManager>
+                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+             <ContentTemplate>
+              <h1>
+                    TCI QUEUE SYSTEM            
+                </h1>
+                </ContentTemplate>
+                     <Triggers>
+                         <asp:AsyncPostBackTrigger ControlID="Timer2" EventName="Tick" />
+                     </Triggers>
+                </asp:UpdatePanel>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/cvo.aspx" Text="CVO"/>
+                        <asp:MenuItem Text="Financial Aid" Value="Financial Aid" 
+                            NavigateUrl="~/FinancialAid.aspx"></asp:MenuItem>
+                         <asp:MenuItem NavigateUrl="~/StudentLoanServ.aspx" Text="Student Loan Services" 
+                            Value="Student Queue"></asp:MenuItem>                                
+                        <asp:MenuItem NavigateUrl="~/Queueoutput.aspx" Text="Student Queue" 
+                            Value="Student Queue"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <p>
+                    test</p>
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div class="footer">
+   
+    </div>
+    <asp:Timer ID="Timer2" runat="server" Interval="1000" Enabled="False">
+    </asp:Timer>
+    </form>
+</body>
+</html>

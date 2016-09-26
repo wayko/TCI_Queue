@@ -1,0 +1,39 @@
+﻿.lable3
+{
+    margin-left:10%;
+    font-size: large;
+    text-decoration: none;
+            text-align: center;
+        }
+.lable4
+{
+    margin-left:10%;
+    font-size: xx-large;
+    text-decoration: none;
+            text-align: center;
+        }
+        body
+        {
+         background-color: #000000;   
+        }
+        footer
+        {
+            position: fixed;
+            width: 100%;
+            
+        }
+        #DataList1
+        {
+         margin-left: 10px;   
+        } 
+        
+   body
+   {
+            position: fixed;
+            height:100%;
+}
+.footerwrapper
+{
+ width:100%;
+ margin-left: 175px;   
+}
